@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Logo</a>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+
+    <section>
+        <img src="/images/stars.png" alt="stars" id="stars">
+        <img src="/images/moon.png" alt="moon" id="moon">
+        <img src="/images/mountains_behind.png" alt="mountains_behind" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="/images/mountains_front.png" alt="mountains_front" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla eum minima nostrum voluptate deserunt, aspernatur praesentium earum dolorem iure tenetur vitae nesciunt error, laboriosam necessitatibus quasi aperiam dolore aliquam nam non, voluptates corrupti?<br><br> Consectetur dolorem deleniti hic maxime similique consequatur illo aperiam ipsum dolor quis animi impedit eligendi quibusdam suscipit at, unde natus! Cumque neque voluptas officia natus? Officiis eius ipsam consequatur, vitae ratione iusto a ipsa maxime tempore deserunt veniam, vero quo sapiente magni quam veritatis cupiditate dolore earum quis nihil doloremque aspernatur voluptatibus. <br><br> Earum sunt inventore eligendi ducimus hic ipsum voluptate delectus, minima vitae? Accusamus ipsa quas recusandae!æLorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores sint est ratione tenetur dolorem quibusdam, quos reiciendis vitae quam. Quasi impedit, deleniti doloremque, nemo aliquid ea corrupti dolorem omnis accusantium sit sint totam aut numquam!<br><br> Animi minima porro magni quos, quasi dolore sint quae modi corrupti, maxime, consequatur sapiente perferendis. Animi consequatur corrupti assumenda ipsa quos placeat similique hic optio labore earum dignissimos quis quam odit natus eveniet nostrum necessitatibus rerum, explicabo, sit recusandae!<br><br> Minima corporis minus explicabo. Rerum, labore. Consectetur optio suscipit nisi omnis, dolore fugit repellat quae beatae quas quasi distinctio. Maxime, earum tempore aliquam laborum aperiam odit?Lorem ipsum dolor sit amet consectetur adipisicing elit.<br><br> Cum voluptatum deleniti, provident quibusdam tenetur maiores maxime aut, libero voluptatibus quae quis fuga, sequi sunt. Tempore numquam repellat consequatur a, distinctio eligendi animi alias eius, officia aut quos. Vero pariatur autem aliquid nam cum libero iusto necessitatibus hic.<br><br>Quae amet eos sequi cum iure, qui eius nulla ut, consectetur minus voluptate id explicabo suscipit. Tempora dicta ipsum architecto enim ex libero nostrum ipsa recusandae quo odit illo voluptate, explicabo consequatur iste natus a ea reiciendis sed corrupti odio officia dolor consectetur distinctio ducimus. Non id nihil dignissimos voluptate voluptates illum. Nisi?</p>
+    </div>
+
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountainsBehind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountainsFront = document.getElementById('mountains_front');
+        let header = document.querySelector('header')
+        window.addEventListener('scroll', function() {
+
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px'; //css de stars resminin leftini scroll un asagi inerkenki degerini px olarak atiyor
+            moon.style.top = value * .85 + 'px'; 
+            mountainsBehind.style.top = value * 0.5 + 'px'; 
+            mountainsFront.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px'; 
+            text.style.marginTop = value * 1.5 + 'px'; 
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+
+        })
+    </script>
+  </body>
+</html>
